@@ -35,7 +35,7 @@ For example:
 * _Try to remember as many numbers as possible **before** you start to calculate!_
 
 ## How to play?
-Download .apk file to you Android phone and install it. Enjoy!
+Download apk file from [here](/app/src/main/res/MemoGame.apk) to you Android phone and install it. Enjoy!
 
 ## How I built the Memory Game
 I built the project in Android Studio, invent the app logic and also styled the game
