@@ -64,6 +64,6 @@ public class MainActivity extends AppCompatActivity implements GametFragment.onG
     }
 
     private void uploadTest() {
-        int i = 1 +1;
+        int i = 2 + 1;
     }
 }
