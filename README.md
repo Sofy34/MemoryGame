@@ -10,6 +10,7 @@ Get the maximum result of arithmetic operation with 3 numbers in 1 minute.
 
 ## Rules
 * You can't see the intermediate result
+* You can't use the same number twice
 * Before you choose operator (**+** or **x**), you can see only 2 numbers at the same time
 * After you choose operator (**+** or **x**), you won't have chance to check the numbers
 * You have to use both **+** and **x**, each of them only once
