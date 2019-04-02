@@ -59,14 +59,15 @@ public class GametFragment extends Fragment implements View.OnClickListener {
     private onGameFragmentInteractionListener mListener;
     public int timeCounter = 60;
     CountDownTimer timer;
-    Timer buttonTimer;
     private Integer steps = 0;
-
+    private TimerTask tt;
     @Override
     public void onStop() {
         super.onStop();
-        buttonTimer.cancel();
         timer.cancel();
+
+        tt.cancel();
+
         if (mp != null && mp.isPlaying()) {
             mp.stop();
         }
@@ -192,8 +193,9 @@ public class GametFragment extends Fragment implements View.OnClickListener {
 
     private void hideButton(final Button numberButton) {
 
-        buttonTimer = new Timer();
-        buttonTimer.schedule(new TimerTask() {
+        Timer buttonTimer = new Timer();
+        tt = null;
+        buttonTimer.schedule(tt = new TimerTask() {
             @Override
             public void run() {
                 getActivity().runOnUiThread(new Runnable() {
@@ -230,8 +232,9 @@ public class GametFragment extends Fragment implements View.OnClickListener {
             if (numberButton.getnumberToShow() == number)
 
                 btnId = numberButton.getbtnId();
-            blockedBtn = (Button) rootView.findViewById(btnId);
         }
+        blockedBtn = (Button) rootView.findViewById(btnId);
+
         return blockedBtn;
     }
 
@@ -251,6 +254,8 @@ public class GametFragment extends Fragment implements View.OnClickListener {
                 case 3:
                     num1 = currentNum;
                     Button blockedBtn = findButtonIdbyNumber(num1);
+                    tt.cancel();
+                    blockedBtn.setText("X");
                     blockedBtn.setEnabled(false);
                     if (view == plusBtn)
                         state = 2;
@@ -260,15 +265,24 @@ public class GametFragment extends Fragment implements View.OnClickListener {
                 case 4:
 
                 case 6:
+                    num2 = currentNum;
+                    blockedBtn = findButtonIdbyNumber(num2);
+                    blockedBtn.setText("X");
+                    blockedBtn.setEnabled(false);
                     if (view == plusBtn)
                         Toast.makeText(getActivity(), "You already used +!", Toast.LENGTH_LONG).show();
                     else if (view == multiplyBtn) {
                         state = 6;
 //                        num2 = currentNum;
                     }
+
                     break;
                 case 5:
                 case 7:
+                    num2 = currentNum;
+                    blockedBtn = findButtonIdbyNumber(num2);
+                    blockedBtn.setText("X");
+                    blockedBtn.setEnabled(false);
                     if (view == plusBtn) {
                         state = 7;
 //                        num2 = currentNum;
@@ -337,12 +351,10 @@ public class GametFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void afterNumberTwo(Button numberButton) {
+    private void afterNumberTwo(final Button numberButton) {
         searchAndShowNumber(numberButton);
         hideButton(numberButton);
-        num2 = currentNum;
-        Button blockedBtn = findButtonIdbyNumber(num2);
-        blockedBtn.setEnabled(false);
+
     }
 
     private void showResult() {
