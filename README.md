@@ -41,5 +41,5 @@ Download apk file from [here](/app/src/main/res/MemoGame.apk) to you Android pho
 I built the project in Android Studio, invent the app logic and also styled the game
 * created a set of numbers that shuffles when game is refreshed
 * created a counter for the number of clicks made by player and timer that counts down from 60 to 0
-* implemented steps-logic that follows the chooses made by user
+* implemented steps-logic that follows the choices made by user
 * add feature that saves and displays results of previous games
