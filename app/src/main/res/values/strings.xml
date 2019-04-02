@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">primeNumbers</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rules"><html><body><b>GOAL</b>\nget the <b>BIGGEST</b> result\n<b>1.</b>You can use <b>+</b> and <b>x</b> only once\n<b>2.</b>You have only <b>1</b> minute!
+        \n<b>3.</b>You can see only 2 numbers at once\n<b>4.</b>You can not use the same number twice</body></html></string>
+    <string name="example">11 X 10 + 2 = 112\n11 + 10 X 2 = 42</string>
+</resources>
