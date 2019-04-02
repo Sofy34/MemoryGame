@@ -62,4 +62,8 @@ public class MainActivity extends AppCompatActivity implements GametFragment.onG
     public void onStartFragmentInteraction(Uri uri) {
 
     }
+
+    private void uploadTest() {
+        int i = 1 +1;
+    }
 }
